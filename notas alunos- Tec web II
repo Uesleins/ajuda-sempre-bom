@@ -1,0 +1,35 @@
+<?php
+$alunos = array();
+
+
+ for ($i = 0; $i < 5; $i ++) {
+     echo "digite  o nome do aluno" . ($i +1) . ": ";
+     $nome = trim(fgets(STDIN));
+
+     echo "digeite a nota de $nome: ";
+     $nota =(float)trim(fgets(STDIN));
+
+     $alunos[] = array('nome' => $nome, 'nota' => $nota);
+     
+ }
+
+ $somaNotas = 0;
+ $maiorNota = -1;
+ $alunoMaiorNota = '';
+            //soma tudo e  tira media
+    foreach($alunos as $aluno){
+        $somaNotas += $aluno['nota'];
+
+        if ($aluno['nota']> $maiorNota){
+            $maiorNota = $aluno['nota'];
+            $alunoMaiorNota = $aluno['nome'];
+        }
+    }
+
+    //calculo de media
+    $mediaNotas = $somaNotas /count($alunos);
+
+    echo "A media da classe é:". number_format($mediaNotas,2) . "\n";
+    echo " Aluno com nota maior é: $alunoMaiorNota com nota $maiorNota\n";
+
+?>
