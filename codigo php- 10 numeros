@@ -1,0 +1,35 @@
+<?php
+    $numeros = array();
+
+    for($i = 0; $i < 10; $i++) {
+        echo "digite o numero" . ($i + 1). ":";
+        $numero = (int) trim(fgtes(STDIN));
+
+        $numeros[] = $numero;
+    }
+
+    $quantidadeNumerosNegativos = 0;
+    $quantidadeNumerosPositivos = 0;
+    $quantidadeNumerosPares = 0;
+    $quantidadeNumerosImpares = 0;
+
+    foreach($numeros as $numero){
+        if($numero < 0){
+        $quantidadeNumerosNegativos ++;
+        } elseif ($numero > 0){
+            $quantidadeNumerosPositivos ++;
+        }
+        if ($numero % 2 == 0){
+            $quantidadeNumerosPares ++;
+        } else {
+            $quantidadeNumerosImpares] ++;
+        }
+    }
+
+    echo "quantidade de Numeros Negativos: $quantidadeNumerosNegativos \n";
+    echo "quantidadede Números Positivos: $quantidadeNumerosPositivos \n";
+    echo "quantidadeNumerosPares: $quantidadeNumerosPares \n";
+    echo "quantidadeNumerosImpares: $quantidadeNumerosImpares \n";
+
+
+?>
